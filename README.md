@@ -540,3 +540,14 @@ FastTreeMP combined_seqs.mafft.trimalautomated1 > combined_seqs.fasttree
 ```
 
 Once a dataset had been suitably refined, the program iqtree2 was used to infer a final maximum likelihood tree.
+
+##References
+Keeling, P.J. et al. (2014) ‘The Marine Microbial Eukaryote Transcriptome Sequencing Project (MMETSP): illuminating the functional diversity of eukaryotic life in the oceans through transcriptome sequencing’, PLoS biology, 12(6), p. e1001889.
+
+Johnson, L.K., Alexander, H. and Brown, C.T. (2017) ‘(all datasets) MMETSP re-assemblies’. Available at: https://doi.org/10.5281/zenodo.3247846.
+
+Hehenberger, E., Gast, R.J. and Keeling, P.J. (2019) ‘A kleptoplastidic dinoflagellate and the tipping point between transient and fully integrated plastid endosymbiosis’, Proceedings of the National Academy of Sciences of the United States of America, 116(36), pp. 17934–17942.
+
+Janouškovec, J. et al. (2019) ‘Apicomplexan-like parasites are polyphyletic and widely but selectively dependent on cryptic plastid organelles’, eLife, 8. Available at: https://doi.org/10.7554/eLife.49662.
+
+Mathur, V. et al. (2019) ‘Multiple Independent Origins of Apicomplexan-Like Parasites’, Current biology: CB, 29(17), pp. 2936–2941.e5.
