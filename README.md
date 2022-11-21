@@ -541,7 +541,7 @@ FastTreeMP combined_seqs.mafft.trimalautomated1 > combined_seqs.fasttree
 
 Once a dataset had been suitably refined, the program iqtree2 was used to infer a final maximum likelihood tree.
 
-##References
+## References
 Keeling, P.J. et al. (2014) ‘The Marine Microbial Eukaryote Transcriptome Sequencing Project (MMETSP): illuminating the functional diversity of eukaryotic life in the oceans through transcriptome sequencing’, PLoS biology, 12(6), p. e1001889.
 
 Johnson, L.K., Alexander, H. and Brown, C.T. (2017) ‘(all datasets) MMETSP re-assemblies’. Available at: https://doi.org/10.5281/zenodo.3247846.
