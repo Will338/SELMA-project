@@ -548,6 +548,6 @@ Johnson, L.K., Alexander, H. and Brown, C.T. (2017) ‘(all datasets) MMETSP re-
 
 Hehenberger, E., Gast, R.J. and Keeling, P.J. (2019) ‘A kleptoplastidic dinoflagellate and the tipping point between transient and fully integrated plastid endosymbiosis’, Proceedings of the National Academy of Sciences of the United States of America, 116(36), pp. 17934–17942.
 
-Janouškovec, J. et al. (2019) ‘Apicomplexan-like parasites are polyphyletic and widely but selectively dependent on cryptic plastid organelles’, eLife, 8. Available at: https://doi.org/10.7554/eLife.49662.
+Janouškovec, J. et al. (2019) ‘Apicomplexan-like parasites are polyphyletic and widely but selectively dependent on cryptic plastid organelles’, eLife, 8.
 
 Mathur, V. et al. (2019) ‘Multiple Independent Origins of Apicomplexan-Like Parasites’, Current biology: CB, 29(17), pp. 2936–2941.e5.
