@@ -1,6 +1,6 @@
 # Methodology and code for sequence sampling and dataset refinement for SELMA and TIC proteins phylogenetic analysis
 
-## Creating custom database
+## Curating a custom database for protein similarity searches
 A custom local database was curated to include protein sequences belonging to key taxa of interest, obtained from various sources: All protein sequences for the taxa listed in supplementary data were downloaded from Uniprot. Predicted protein sequences from transcriptomes reassembled(Johnson, Alexander and Brown, 2019) from the data generated in The MMETSP(Keeling et al., 2014) for the taxa listed in the supplementary data were downloaded from an online repository(Johnson, Alexander and Brown, 2017). Predicted protein sequences from the transcriptome dataset for the Ross Sea Dinoflagellate, referred to as “RSDallcleannoPhaeo”, was obtained from a previous study(Hehenberger, Gast and Keeling, 2019). Predicted protein sequences from transcriptomes for apicomplexa, chrompodellid and squirmid taxa were obtained from previous studies(Janouškovec et al., 2019; Mathur et al., 2019).
 
 These protein sequences were combined as a single fasta file from which a BLAST-searchable database was created.
