@@ -14,11 +14,11 @@ makeblastdb -in customdatabase.fasta -dbtype prot
 
 
 
-## A separate blank starting directory was created for the analysis of each protein
+## An empty starting directory was created for the analysis of each protein
 
 For each protein analysed (Cdc48, Uba1, Der1, Ubc4, Ubi, Hsp70, Tic110, Tic20, Tic22) a new directory was created and was given the same name as the protein.
 
-For example, for the protein Cdc48, a new directory called "Cdc48" was made:
+For example, for the protein Cdc48, a new directory with the name "Cdc48" was made:
 ```bash
 mkdir Cdc48
 cd Cdc48
