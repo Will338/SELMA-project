@@ -1,7 +1,7 @@
 # Methodology and code for sequence sampling and dataset refinement for phylogenetic analysis of SELMA and TIC proteins
 
 ## Curating a custom database for protein similarity searches
-A custom local database was curated to include protein sequences belonging to key taxa of interest, obtained from various sources: All protein sequences for the taxa listed in supplementary data were downloaded from Uniprot. Predicted protein sequences from transcriptomes reassembled(Johnson, Alexander and Brown, 2019) from the data generated in The MMETSP(Keeling et al., 2014) for the taxa listed in the supplementary data were downloaded from an online repository(Johnson, Alexander and Brown, 2017). Predicted protein sequences from the transcriptome dataset for the Ross Sea Dinoflagellate, referred to as “RSDallcleannoPhaeo”, was obtained from a previous study(Hehenberger, Gast and Keeling, 2019). Predicted protein sequences from transcriptomes for apicomplexa, chrompodellid and squirmid taxa were obtained from previous studies(Janouškovec et al., 2019; Mathur et al., 2019).
+A custom local database was curated to include protein sequences belonging to key taxa from various sources. All protein sequences for the taxa listed in Supplementary Information were downloaded from Uniprot. Predicted protein sequences from transcriptomes reassembled(Johnson, Alexander and Brown, 2019) from the data generated in The MMETSP(Keeling et al., 2014) for the taxa listed in Supplementary Information were downloaded from an online repository(Johnson, Alexander and Brown, 2017). Protein datasets listed in Supplementary Information were downloaded from VEuPathDB(Amos et al., 2022). Predicted protein sequences from the transcriptome dataset for the Ross Sea Dinoflagellate, referred to as “RSDallcleannoPhaeo”, was obtained from a previous study(Hehenberger, Gast and Keeling, 2019). Predicted protein sequences from transcriptomes for apicomplexa, chrompodellid and squirmid taxa were obtained from previous studies(Janouškovec et al., 2019; Mathur et al., 2019).
 
 These protein sequences were combined as a single fasta file from which a BLAST-searchable database was created.
 
@@ -545,6 +545,8 @@ Once a dataset had been suitably refined, the program iqtree2 was used to infer 
 Keeling, P.J. et al. (2014) ‘The Marine Microbial Eukaryote Transcriptome Sequencing Project (MMETSP): illuminating the functional diversity of eukaryotic life in the oceans through transcriptome sequencing’, PLoS biology, 12(6), p. e1001889.
 
 Johnson, L.K., Alexander, H. and Brown, C.T. (2017) ‘(all datasets) MMETSP re-assemblies’. Available at: https://doi.org/10.5281/zenodo.3247846.
+
+Amos, B. et al. (2022) ‘VEuPathDB: the eukaryotic pathogen, vector and host bioinformatics resource center’, Nucleic acids research, 50(D1), pp. D898–D911.
 
 Hehenberger, E., Gast, R.J. and Keeling, P.J. (2019) ‘A kleptoplastidic dinoflagellate and the tipping point between transient and fully integrated plastid endosymbiosis’, Proceedings of the National Academy of Sciences of the United States of America, 116(36), pp. 17934–17942.
 
