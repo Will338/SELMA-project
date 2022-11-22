@@ -1,6 +1,6 @@
 # Methodology and code for sequence sampling and dataset refinement for SELMA and TIC proteins phylogenetic analysis
 
-##Creating custom database
+## Creating custom database
 A custom local database was curated to include protein sequences belonging to key taxa of interest, obtained from various sources: All protein sequences for the taxa listed in supplementary data were downloaded from Uniprot. Predicted protein sequences from transcriptomes reassembled(Johnson, Alexander and Brown, 2019) from the data generated in The MMETSP(Keeling et al., 2014) for the taxa listed in the supplementary data were downloaded from an online repository(Johnson, Alexander and Brown, 2017). Predicted protein sequences from the transcriptome dataset for the Ross Sea Dinoflagellate, referred to as “RSDallcleannoPhaeo”, was obtained from a previous study(Hehenberger, Gast and Keeling, 2019). Predicted protein sequences from transcriptomes for apicomplexa, chrompodellid and squirmid taxa were obtained from previous studies(Janouškovec et al., 2019; Mathur et al., 2019).
 
 These protein sequences were combined as a single fasta file from which a BLAST-searchable database was created.
@@ -37,7 +37,7 @@ mkdir Tree_building/Separate_and_cluster_seqs/Manual_tree_refining
 echo "" > Querys/queries.faa
 
 ```
-##Running BLASTp search
+## Running BLASTp search
 Protein sequences in fasta format were saved in the file that was created in the previous step at the path /Query/queries.faa
 These proteins are bait proteins for which there is strong evidence that these are homologues of the protein of interest. These were used as the queries for BLASTp searches against the custom protein database.
 
@@ -79,11 +79,11 @@ $protein_dir/Tree_building/combined_seqs.faa
 cp $protein_dir/Tree_building/combined_seqs.faa $protein_dir/seqs_from_blast_search_for_trees.faa
 ```
 
-##Refining the BLASTp-generated dataset
-###Removing poorly-aligned and very short sequences
+## Refining the BLASTp-generated dataset
+### Removing poorly-aligned and very short sequences
 
 The following sections of code were used as an initial coarse filter of the sequences obtained from BLASTp searches.
-###1. First aligned and trimmed the dataset 
+### 1. First aligned and trimmed the dataset 
 The following script was ran to first align the sequences and select conserved sites.
 $1 is given as the parent directory with the same name as the protein being investigated.
 ```bash
@@ -98,7 +98,7 @@ mafft --thread 20 $Tree_dir/combined_seqs.faa > $Tree_dir/combined_seqs.mafftaln
 
 trimal -in $Tree_dir/combined_seqs.mafftaln -out $Tree_dir/combined_seqs.automated1 -automated1
 ```
-###2. Remove sequences that are shorter than the cut-off
+### 2. Remove sequences that are shorter than the cut-off
 The following section of code was used to remove sequences that had retained a number of sites below a specified percentage cut-off of the number of sites in the total dataset, after the dataset was aligned and trimmed. The percentage cut-off value was provided as $1. For all proteins value "30" for 30 percent cut-off was used. This meant that any sequence that was made-up of 70% or more of gaps (empty, non-amino acid sites) were removed. However, sequences were kept for key dinoflagellate taxa Kryptoperidinium (called Glenodinium in some datasets), Karlodinium and Karenia, regardless of their length, so these were temporarily removed prior to this filtering step and added back into the dataset at a later step.
 
 $2 was provided as the path to directory named the same as the protein being analysed.
@@ -160,7 +160,7 @@ tr '$' '\n' | \
 sed '/^$/d' >> $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa
 ```
 
-###Clustering of key groups separately to remove similar sequences (reducing redundancy of the dataset)
+### Clustering of key groups separately to remove similar sequences (reducing redundancy of the dataset)
 
 The following section of code was used to first divide indiviudal sequences into different taxonomic groups that could then by clustered to different percentage identities using the program CD-hit.
 
@@ -192,7 +192,7 @@ cryptophyte_cluster_value="1"
 The following section divided sequences into different groups based on searching for key words/taxa names in the fasta headers of the sequences.
 
 ```bash
-# This section is splitting the dataset into different groups of sequences so I can cluster certain sequences at different identities
+#This section is splitting the dataset into different groups of sequences so I can cluster certain sequences at different identities
 
 #Split sequences into those that I want to cluster and those that I don't
 #First take out kareniaceae sequences
@@ -213,7 +213,7 @@ egrep -i 'glenodinium|operidinium|durinskia' | \
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/peridiniales_seqs.faa
 
-#Take out non-diatom stramenopiles since these contain a large number of sequences relative to other groups, so will need clustering to a lower percentage identity
+#Separate non-diatom stramenopiles since these contain a large number of sequences relative to other groups, so will need clustering to a lower percentage identity
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -223,7 +223,7 @@ egrep -v -i 'Thalassiosira|Phaeodactylum|Fragilariopsis|Amphora|Skeletonema|nitz
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/stramenopile_seqs.faa
 
-#Take out diatoms since these won't be clustered
+#Separate diatoms
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -232,7 +232,7 @@ egrep -i 'Thalassiosira|Phaeodactylum|Fragilariopsis|Amphora|Skeletonema|nitzsch
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/diatom_seqs.faa
 
-#Take out haptophytes since these won't be clustered
+#Separate haptophytes
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -241,7 +241,7 @@ egrep -i 'haptophyt|Calcidiscus|Chrysochromulina|Chrysoculter|Coccolithus|Emilia
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/haptophyte_seqs.faa
 
-#Take out haptophytes since these won't be clustered
+#Separate cryptophytes
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -250,7 +250,7 @@ egrep -i 'cryptophyt|Guillardia' | \
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/cryptophyte_seqs.faa
 
-#Take out apicomplexa since these won't be clustered
+#Separate apicomplexa
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -259,7 +259,7 @@ egrep -i 'Ascogregarina|Babesia|Besnoitia|Chromera|Cryptosporidium|Cyclospora|Cy
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/apicomplexa_seqs.faa
 
-#Take out ciliates since these won't be clustered
+#Separate ciliates
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -268,7 +268,7 @@ egrep -i 'ciliates_seq|tetrahymena' | \
 tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/Separate_and_cluster_seqs/ciliates_seqs.faa
 
-#Take remaining sequences after removing key groups
+#Separate remaining sequences after removing key groups
 cat $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa | \
 sed -E 's/(>.*)/£\1$/' | \
 tr -d '\n' | \
@@ -477,7 +477,7 @@ sed '/^$/d' | \
 tr ' ' '\n' > $Tree_dir/Separate_and_cluster_seqs/short_seqs_key_dinos_removed.trimalgappyout_unaligned_again
 
 
-##### CHOOSE PERCENTAGE AT WHICH TO CLUSTER THE MAJORITY OF SEQUENCES WITH KEY DINOS REMOVED HERE ### 
+##### CHOOSE PERCENTAGE AT WHICH TO CLUSTER THE MAJORITY OF SEQUENCES, WITH KEY GROUPS REMOVED, HERE ### 
 cd-hit \
 -i $Tree_dir/Separate_and_cluster_seqs/short_seqs_key_dinos_removed.trimalgappyout_unaligned_again \
 -o $Tree_dir/Separate_and_cluster_seqs/short_seqs_key_dinos_removed.clustered \
