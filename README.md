@@ -321,7 +321,7 @@ cd-hit \
 -T 30
 ```
 
-* Clustering the Stramenopile sequences
+* Clustering the Stramenopile (excluding diatoms) sequences
 
 ```bash
 printf "\n\nCLUSTERING STRAMENOPILES\n"
@@ -355,7 +355,7 @@ printf "\n\nSTRAMENOPILE CLUSTERING COMPLETE\n\n\n\n\n\n"
 printf "###############################################################\n"
 
 ```
-This section clusters the diatom sequences
+This section clusters diatom sequences
 ```bash
 printf "\n\nCLUSTERING DIATOMS"
 
