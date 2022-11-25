@@ -581,7 +581,7 @@ FastTreeMP combined_seqs.mafft.trimalautomated1 > combined_seqs.fasttree
 ```
 
 ## Inferring phylogenies from the refined datasets
-Once a dataset for a particular protein had been suitably refined, the program iqtree2 was used to infer a final maximum likelihood tree and estimate support values, as described in the methods section of the manuscript. These final datasets, as well as the log files, which include the commands used to run iqtree2, can be downloaded from FigShare, [here](https://doi.org/10.6084/m9.figshare.21602697).
+Once a dataset for a particular protein had been suitably refined, the program iqtree2 was used to infer a final maximum likelihood tree and estimate support values, as described in the methods section of the manuscript. These final datasets for each protein, including alignments, trimmed alignments, tree files and iqtree2 log files, which include the commands used to run iqtree2, can be downloaded from FigShare, [here](https://doi.org/10.6084/m9.figshare.21602697).
 
 # References
 * Keeling, P.J. et al. (2014) ‘The Marine Microbial Eukaryote Transcriptome Sequencing Project (MMETSP): illuminating the functional diversity of eukaryotic life in the oceans through transcriptome sequencing’, PLoS biology, 12(6), p. e1001889. ([link](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001889))
