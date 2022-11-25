@@ -147,7 +147,8 @@ grep '>' | tr -d '>'  > $Tree_dir/Separate_and_cluster_seqs/headers_short_seqs_r
 #extract seqs that are longer than percentage cut-off
 module load seqtk/1.3
 
-seqtk subseq $Tree_dir/combined_seqs.faa $Tree_dir/Separate_and_cluster_seqs/headers_short_seqs_removed.txt > $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa
+seqtk subseq $Tree_dir/combined_seqs.faa $Tree_dir/Separate_and_cluster_seqs/headers_short_seqs_removed.txt \
+> $Tree_dir/Separate_and_cluster_seqs/short_seqs_removed.faa
 ```
 
 The following code recombines all of the unfiltered sequences from *Kryptoperidinium*, *Karlodinium* and *Karenia* with the dataset that includes all other taxa, for which short seqeunces have been removed.
