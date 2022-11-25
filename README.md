@@ -121,10 +121,11 @@ tr '$' '\n' | \
 sed '/^$/d' > $Tree_dir/combined_seqs.trimalautomated1_key_dinos_removed
 
 #First get the length of the trimmed alignment
-aln_len=$(echo | cat $Tree_dir/combined_seqs.trimalautomated1_key_dinos_removed | sed -E 's/(>.*)/£\1$/' | tr -d '\n' | tr '£' '\n' |  tr '$' '\n' | sed '/^$/d' | awk {'print length'} | head -n 2 | tail -n 1)
+aln_len=$(echo | cat $Tree_dir/combined_seqs.trimalautomated1_key_dinos_removed | sed -E 's/(>.*)/£\1$/' | \
+tr -d '\n' | tr '£' '\n' |  tr '$' '\n' | sed '/^$/d' | awk {'print length'} | head -n 2 | tail -n 1)
 
 #Calculate X percent length of alignment
-#nside awk you don't have direct access to shell variables, you need to pass them as an option. Hence -v AL=
+#inside awk you don't have direct access to shell variables, you need to pass them as an option. Hence -v AL=
 len_percent_cut=$(echo | awk -v PC="$percent_cut" -v AL="$aln_len" '{ print PC*AL/100 }')
 
 #echo $len_percent_cut
