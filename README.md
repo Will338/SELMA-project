@@ -567,7 +567,8 @@ module load trimal/1.4
 module load FastTree/2.1.11
 
 #Finds sequences with duplicate headers and keeps one
-cat combined_seqs.faa | sed -E 's/>(.*)/£>\1$/' | tr -d '\n' | tr '£' '\n' | tr '$' '\t' | sort -k 1,1 | sort -k 1,1 -u | tr '\t' '\n' > combined_seqs.faaa
+cat combined_seqs.faa | sed -E 's/>(.*)/£>\1$/' | tr -d '\n' | tr '£' '\n' | tr '$' '\t' | \
+sort -k 1,1 | sort -k 1,1 -u | tr '\t' '\n' > combined_seqs.faaa
 
 mv combined_seqs.faaa combined_seqs.faa
 
